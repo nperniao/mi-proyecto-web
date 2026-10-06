@@ -6,7 +6,7 @@ Este proyecto web ha sido realizado para practicar los conceptos básicos de Git
 
 ## Tabla de contenido
 
-- (#descripción)
+- [Descripción](#descripción)
 - [Mejoras implementadas](#mejoras-implementadas)
 - [Estructura del proyecto](#estructura-del-proyecto)
 
