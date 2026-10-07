@@ -2,7 +2,7 @@
 
 ## Descripción
 
-Este proyecto web ha sido realizado para practicar los conceptos básicos de Git y GitHub. El proyecto está desarrollado únicamente con HTML y permite trabajar con repositorios, ramas, commits y Pull Requests.
+Este proyecto web ha sido realizado para practicar los conceptos básicos de Git y GitHub. Está desarrollado con HTML, CSS y JavaScript, y permite trabajar con repositorios, ramas, commits y Pull Requests.
 
 ## Tabla de contenido
 
@@ -21,9 +21,9 @@ Se ha añadido un menú de navegación con enlaces internos a las diferentes sec
 - Proyecto
 - Contacto
 
-### Formulario de contacto
+### Formulario interactivo de contacto
 
-Se ha añadido un formulario de contacto utilizando únicamente HTML, con los siguientes campos:
+El formulario incluye validación de campos obligatorios y un contador de caracteres para el mensaje. JavaScript muestra la confirmación de validación; para enviar mensajes es necesario conectarlo a un servicio de envío. Incluye los siguientes campos:
 
 - Nombre
 - Correo electrónico
@@ -35,6 +35,8 @@ Se ha añadido un formulario de contacto utilizando únicamente HTML, con los si
 El proyecto está formado por:
 
 - `index.html`: página principal del sitio web.
+- `style.css`: estilos de la página y del formulario.
+- `app.js`: contador de caracteres y validación del formulario.
 - `.gitignore`: archivos y carpetas que no deben incluirse en el repositorio.
 - `README.md`: documentación del proyecto.
 

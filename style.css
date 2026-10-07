@@ -156,6 +156,19 @@ form br {
     display: none;
 }
 
+.form-meta {
+    justify-self: end;
+    color: var(--muted);
+    font-size: 0.8rem;
+}
+
+.form-status {
+    min-height: 1.7em;
+    margin-top: 1rem;
+    color: var(--accent-dark);
+    font-size: 0.9rem;
+}
+
 label {
     margin-top: 0.35rem;
     color: var(--ink);
