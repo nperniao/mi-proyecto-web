@@ -1,142 +1,247 @@
 :root {
     color-scheme: light;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    color: #243247;
-    background: #f3f6fb;
+    font-family: Inter, "Segoe UI", sans-serif;
+    color: #202a35;
+    background: #f5f2eb;
     font-synthesis: none;
     text-rendering: optimizeLegibility;
+    --ink: #202a35;
+    --muted: #66717b;
+    --paper: #fffefa;
+    --line: #e5e0d6;
+    --accent: #b44e32;
+    --accent-dark: #8c3925;
+    --focus: #2867c7;
 }
 
-* {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
     min-width: 320px;
     min-height: 100vh;
     margin: 0;
-    line-height: 1.6;
+    line-height: 1.7;
+    background:
+        radial-gradient(ellipse at 50% 0, rgb(255 255 255 / 70%), transparent 38rem),
+        #f5f2eb;
 }
 
 header {
-    padding: 3rem 1.5rem 2rem;
-    color: #fff;
-    text-align: center;
-    background: linear-gradient(135deg, #174ea6, #3978d4);
+    position: relative;
+    overflow: hidden;
+    padding: clamp(4.5rem, 12vw, 8rem) 1.5rem 3.5rem;
+    color: #f9f6ef;
+    text-align: left;
+    background:
+        radial-gradient(ellipse at 85% 0%, rgb(214 130 88 / 20%), transparent 28rem),
+        #202a35;
+}
+
+header::after {
+    position: absolute;
+    right: max(6vw, calc((100vw - 980px) / 2));
+    bottom: -5rem;
+    width: 15rem;
+    height: 15rem;
+    border: 1px solid rgb(255 255 255 / 10%);
+    border-radius: 50%;
+    box-shadow: 0 0 0 2rem rgb(255 255 255 / 3%), 0 0 0 4rem rgb(255 255 255 / 2%);
+    content: "";
+    pointer-events: none;
 }
 
 header h1 {
-    margin: 0 0 1rem;
-    font-size: clamp(2rem, 5vw, 3rem);
-    line-height: 1.2;
+    position: relative;
+    z-index: 1;
+    max-width: 850px;
+    margin: 0 auto 2rem;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(2.7rem, 7vw, 5.4rem);
+    font-weight: 400;
+    letter-spacing: -0.055em;
+    line-height: 1.04;
+    text-wrap: balance;
 }
 
 nav {
+    position: relative;
+    z-index: 1;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
     align-items: center;
-    gap: 0.5rem 1rem;
+    gap: 0.4rem 1.5rem;
+    max-width: 850px;
+    margin: 0 auto;
+    color: #9ba4aa;
+    font-size: 0;
 }
 
 nav a {
-    color: #fff;
+    color: #e7e2d9;
+    font-size: 0.9rem;
     font-weight: 600;
     text-decoration: none;
+    transition: color 160ms ease;
 }
 
 nav a:hover,
 nav a:focus-visible {
+    color: #f0a17f;
     text-decoration: underline;
-    text-underline-offset: 0.2em;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.35em;
 }
 
 main {
-    width: min(100% - 2rem, 760px);
-    margin: 2rem auto;
+    display: grid;
+    gap: 1rem;
+    width: min(100% - 2.5rem, 850px);
+    margin: clamp(2rem, 6vw, 4rem) auto;
 }
 
 section {
-    margin-bottom: 1.25rem;
-    padding: clamp(1.25rem, 4vw, 2rem);
-    border: 1px solid #e1e8f2;
-    border-radius: 14px;
-    background: #fff;
-    box-shadow: 0 6px 20px rgb(34 58 94 / 6%);
-    scroll-margin-top: 1rem;
+    position: relative;
+    padding: clamp(1.5rem, 5vw, 2.75rem);
+    border: 1px solid var(--line);
+    border-radius: 5px;
+    background: var(--paper);
+    box-shadow: 0 12px 35px rgb(32 42 53 / 4%);
+    scroll-margin-top: 1.5rem;
 }
 
-h2 {
-    margin: 0 0 0.5rem;
-    color: #174ea6;
-    font-size: 1.5rem;
+section h2 {
+    margin: 0 0 0.65rem;
+    color: var(--ink);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1.65rem, 4vw, 2.15rem);
+    font-weight: 400;
+    letter-spacing: -0.035em;
+    line-height: 1.2;
 }
 
 section p {
+    max-width: 62ch;
     margin: 0;
+    color: var(--muted);
+}
+
+#inicio {
+    border-top: 3px solid var(--accent);
+}
+
+#informacion {
+    background: #f0ece3;
+}
+
+#contacto {
+    background: var(--paper);
 }
 
 form {
     display: grid;
-    gap: 0.55rem;
+    gap: 0.65rem;
+    max-width: 580px;
+    margin-top: 1.5rem;
+}
+
+form br {
+    display: none;
 }
 
 label {
     margin-top: 0.35rem;
-    font-weight: 600;
+    color: var(--ink);
+    font-size: 0.9rem;
+    font-weight: 650;
 }
 
 input,
 textarea {
     width: 100%;
-    padding: 0.75rem 0.85rem;
-    border: 1px solid #bdc9d9;
-    border-radius: 8px;
+    padding: 0.85rem 1rem;
+    border: 1px solid #d6d1c7;
+    border-radius: 4px;
     background: #fff;
-    color: inherit;
+    color: var(--ink);
     font: inherit;
+    transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #8a9298;
 }
 
 textarea {
-    min-height: 8rem;
+    min-height: 9rem;
     resize: vertical;
 }
 
-input:focus,
-textarea:focus {
-    border-color: #2867c7;
-    outline: 3px solid rgb(40 103 199 / 18%);
+input:focus-visible,
+textarea:focus-visible {
+    border-color: var(--focus);
+    outline: 3px solid rgb(40 103 199 / 16%);
+    outline-offset: 1px;
 }
 
 button {
     justify-self: start;
-    margin-top: 0.5rem;
-    padding: 0.7rem 1.25rem;
-    border: 0;
-    border-radius: 8px;
-    background: #1f5db5;
-    color: #fff;
+    margin-top: 0.6rem;
+    padding: 0.8rem 1.35rem;
+    border: 1px solid var(--accent);
+    border-radius: 4px;
+    background: var(--accent);
+    color: #fffefa;
     font: inherit;
-    font-weight: 700;
+    font-size: 0.95rem;
+    font-weight: 650;
     cursor: pointer;
+    transition: background 160ms ease, border-color 160ms ease, transform 160ms ease;
 }
 
 button:hover {
-    background: #17478c;
+    transform: translateY(-1px);
+    border-color: var(--accent-dark);
+    background: var(--accent-dark);
 }
 
 button:focus-visible {
-    outline: 3px solid #8bb8fa;
+    outline: 3px solid var(--focus);
     outline-offset: 3px;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 520px) {
     header {
-        padding: 2.25rem 1rem 1.75rem;
+        padding: 4rem 1.25rem 2.5rem;
+    }
+
+    nav {
+        gap: 0.65rem 1.15rem;
     }
 
     main {
-        width: min(100% - 1.25rem, 760px);
+        width: min(100% - 1.25rem, 850px);
         margin: 1.25rem auto;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
     }
 }
